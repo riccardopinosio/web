@@ -1,0 +1,67 @@
+---
+sidebar: false
+description: "Riccardo Pinosio's personal website on AI, machine learning, and more."
+image: quarto.png
+toc: true
+listing:
+  date-format: long
+  feed: true
+  filter-ui: false
+  type: table
+  sort-ui: false
+  sort: "date desc"
+  categories: true
+  fields: [date, title, categories]
+  id: blog-listings
+  contents: [blog/posts]
+aliases: ["blog/"]
+format:
+  html:
+    anchor-sections: true
+---
+
+::: {layout="[25,60]" .profile-header}
+
+:::::: {}
+
+![](headshot.jpeg){.profile-pic}
+
+::::::::: {.centerdiv}
+[![](icons/linkedin.svg){width="15%"}](https://www.linkedin.com/in/riccardopinosio/)
+[![](icons/github-mark-white.png){width="15%"}](https://www.github.com/riccardopinosio/)
+[![](icons/scholar.png){width="15%"}](https://www.github.com/riccardopinosio/)
+
+:::::::::
+
+::::::
+
+:::::: {}
+
+Welcome to my website! I'm Riccardo Pinosio, AI/ML scientist/engineer hybrid *extraordinaire* (or so I like to think).
+
+I am director of R&D at [Knights Analytics](https://www.knightsanalytics.com). Before that I was a technologist at [avanade](https://en.wikipedia.org/wiki/Avanade) and data scientist at [Funda](https://www.funda.nl/). I am also a scientific advisor for [digi.bio](https://digi.bio) on the application of ML to biological imaging experiments.
+
+I hold a PhD in logic from the [ILLC](https://www.illc.uva.nl) and lecture in machine learning at the [Amsterdam University of Applied Sciences](https://www.amsterdamuas.com/) and [CMI](https://www.cmihva.nl/en/).
+
+I prefer to work at the intersection of research and engineering because that's where product innovation that really breaks stuff happens. I'm currently focusing on NLP (information extraction, entity resolution), large-scale knowledge graphs & representation learning, and (neuro)-symbolic AI.
+
+::::::
+
+:::
+
+Other than that I love open source, [emacs](https://www.gnu.org/software/emacs/), weird programming languages, and literature (avid Proust fan).
+
+## Contacts
+
+The best way to get in contact with me is to email me at riccardo@knightsanalytics.com, or to shoot me a DM on [linkedin](https://www.linkedin.com/in/riccardopinosio).
+
+---
+
+## Blog
+
+::: {#blog-listings}
+:::
+
+## Colophon
+
+This website is generated with emacs & org-mode, adapting a theme from [Hamel Husain](https://hamel.dev/).

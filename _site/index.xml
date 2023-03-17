@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Riccardo Pinosio: personal website</title>
+<link>https://wwww.riccardopinosio.com/index.html</link>
+<atom:link href="https://wwww.riccardopinosio.com/index.xml" rel="self" type="application/rss+xml"/>
+<description>Riccardo Pinosio&#39;s personal website on AI, machine learning, and more.</description>
+<image>
+<url>https://wwww.riccardopinosio.com/quarto.png</url>
+<title>Riccardo Pinosio: personal website</title>
+<link>https://wwww.riccardopinosio.com/index.html</link>
+</image>
+<generator>quarto-1.2.335</generator>
+<lastBuildDate>Sun, 15 Jan 2023 23:00:00 GMT</lastBuildDate>
+<item>
+  <title>test</title>
+  <dc:creator>Riccardo Pinosio</dc:creator>
+  <link>https://wwww.riccardopinosio.com/blog/posts/test/index.html</link>
+  <description><![CDATA[ 
+
+
+
+<section id="this-is-a-test-blogpost." class="level2">
+<h2 class="anchored" data-anchor-id="this-is-a-test-blogpost.">This is a test blogpost.</h2>
+<p>Which has some content.</p>
+
+
+</section>
+
+ ]]></description>
+  <category>test</category>
+  <guid>https://wwww.riccardopinosio.com/blog/posts/test/index.html</guid>
+  <pubDate>Sun, 15 Jan 2023 23:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>

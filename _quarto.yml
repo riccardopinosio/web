@@ -1,0 +1,38 @@
+project:
+  type: website
+
+execute:
+  eval: false
+
+website:
+  title: "Riccardo Pinosio: personal website"
+  image: quarto.png
+  page-footer:
+    center:
+      - icon: linkedin
+        href: https://www.linkedin.com/in/riccardopinosio/
+      - icon: github
+        href: https://github.com/riccardopinosio
+  favicon: favicon.png
+  open-graph: true
+  site-url: "https://wwww.riccardopinosio.com"
+  description: "AI to the stars"
+  navbar:
+    title: false
+    background: dark
+    pinned: false
+    collapse: false
+    left:
+    - text: "Blog"
+      href: index.qmd
+
+format:
+  html:
+    theme: [solar, custom.scss]
+    css:
+      - styles.css
+    toc: true
+    mainfont: arial
+    fontsize: 13pt
+
+
