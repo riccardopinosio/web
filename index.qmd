@@ -1,6 +1,6 @@
 ---
 sidebar: false
-description: "Riccardo Pinosio's personal website on AI, machine learning, and more."
+description: "Riccardo Pinosio's personal website on AI, machine learning, emacs, and more!"
 image: quarto.png
 toc: true
 listing:
@@ -27,8 +27,10 @@ format:
 ![](headshot.jpeg){.profile-pic}
 
 ::::::::: {.centerdiv}
+
 [![](icons/linkedin.svg){width="15%"}](https://www.linkedin.com/in/riccardopinosio/)
-[![](icons/github-mark-white.png){width="15%"}](https://www.github.com/riccardopinosio/)
+[![](icons/github-mark-white.png){width="15%" .light-hide}](https://www.github.com/riccardopinosio/)
+[![](icons/github-mark.png){width="15%" .dark-hide}](https://www.github.com/riccardopinosio/)
 [![](icons/scholar.png){width="15%"}](https://www.github.com/riccardopinosio/)
 
 :::::::::
@@ -37,31 +39,31 @@ format:
 
 :::::: {}
 
-Welcome to my website! I'm Riccardo Pinosio, AI/ML scientist/engineer hybrid *extraordinaire* (or so I like to think).
+Welcome! I'm Riccardo Pinosio, AI/ML scientist & engineer.
 
-I am director of R&D at [Knights Analytics](https://www.knightsanalytics.com). Before that I was a technologist at [avanade](https://en.wikipedia.org/wiki/Avanade) and data scientist at [Funda](https://www.funda.nl/). I am also a scientific advisor for [digi.bio](https://digi.bio) on the application of ML to biological imaging experiments.
+I'm director of R&D at [Knights Analytics](https://www.knightsanalytics.com). Before that I was a technologist at [Avanade](https://en.wikipedia.org/wiki/Avanade) and data scientist at [Funda](https://www.funda.nl/). I'm also a scientific advisor for [digi.bio](https://digi.bio) on the application of machine learning to biological imaging experiments.
 
 I hold a PhD in logic from the [ILLC](https://www.illc.uva.nl) and lecture in machine learning at the [Amsterdam University of Applied Sciences](https://www.amsterdamuas.com/) and [CMI](https://www.cmihva.nl/en/).
 
-I prefer to work at the intersection of research and engineering because that's where product innovation that really breaks stuff happens. I'm currently focusing on NLP (information extraction, entity resolution), large-scale knowledge graphs & representation learning, and (neuro)-symbolic AI.
+I prefer to work at the intersection of R&D and engineering because that's where product innovation happens. My current focus is on NLP (information extraction, entity resolution), AI assisted data engineering, large-scale knowledge graphs & representation learning, and (neuro)-symbolic AI, with applications primarily in banking (e.g. fraud detection), finance, healthcare & pharma.
 
 ::::::
 
 :::
 
-Other than that I love open source, [emacs](https://www.gnu.org/software/emacs/), weird programming languages, and literature (avid Proust fan).
+Other than that I love open source, [emacs](https://www.gnu.org/software/emacs/), and weird programming languages.
 
-## Contacts
+## [![](icons/cell_phone.svg){width="6%"}]() Contacts
 
 The best way to get in contact with me is to email me at riccardo@knightsanalytics.com, or to shoot me a DM on [linkedin](https://www.linkedin.com/in/riccardopinosio).
 
 ---
 
-## Blog
+## [![](icons/news.svg){width="6%"}]() Blog
 
 ::: {#blog-listings}
 :::
 
-## Colophon
+## [![](icons/copyleft.svg){width="6%"}]() Colophon
 
-This website is generated with emacs & org-mode, adapting a theme from [Hamel Husain](https://hamel.dev/).
+This website is generated with emacs ![](icons/emacslogo.png){width=2%} and org-mode, adapting a theme from [Hamel Husain](https://hamel.dev/).

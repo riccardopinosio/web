@@ -28,11 +28,12 @@ website:
 
 format:
   html:
-    theme: [solar, custom.scss]
+    theme:
+      light: [journal, custom.scss]
+      dark: [journal, custom_dark.scss]
     css:
       - styles.css
+    code-overflow: wrap
     toc: true
-    mainfont: arial
     fontsize: 13pt
-
-
+    include-after-body: ./switch_image_mode.html
