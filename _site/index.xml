@@ -15,7 +15,7 @@
 <link>https://wwww.riccardopinosio.com/index.html</link>
 </image>
 <generator>quarto-1.3.310</generator>
-<lastBuildDate>Mon, 13 Mar 2023 23:00:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 20 Apr 2023 22:00:00 GMT</lastBuildDate>
 <item>
   <title>Scientific note-taking with org-roam, citar, and zotero</title>
   <dc:creator>Riccardo Pinosio</dc:creator>
@@ -26,8 +26,8 @@
 
 <section id="the-problem" class="level1">
 <h1>The problem</h1>
-<p>We have all been there: searching for that elusive system that acts as our <a href="https://en.wikipedia.org/wiki/Extended_mind_thesis">extended mind</a>, bringing order to our scattered notes in a way that allows us to retrieve the right piece of information at the right time, without friction, and perhaps even - one can dream! - enabling us to generate new ideas out of a shapeless mass of post-its.</p>
-<p>In pursuit of this lofty goal, this blogpost will deal with my current strategy to manage scientific note taking using org-roam, citar, and zotero. The most interesting part of this system is perhaps the one-way import of zotero’s pdf editor notes into an org-roam reference note. But I get ahead of myself: let’s start from the beginning.</p>
+<p>We have all been there: searching for that elusive system that acts as our <a href="https://en.wikipedia.org/wiki/Extended_mind_thesis">extended mind</a>, bringing order to our scattered notes and allowing us to retrieve the right piece of information at the right time, without friction, and perhaps even - one can only dream! - enabling us to generate new ideas from a shapeless mass of sketches.</p>
+<p>As a microscopic step in pursuit of this lofty goal, this blogpost will deal with my current strategy to manage scientific note taking using org-roam, citar, and zotero. The most interesting part of this system is perhaps the one-way import of zotero’s pdf editor notes into an org-roam reference note that is linked to the corresponding Zotero item.</p>
 </section>
 <section id="org-roam" class="level1">
 <h1>Org roam</h1>
@@ -311,20 +311,21 @@ background-color: null;
 font-style: inherit;">"pdf"</span> . citar-file-open-external)))</span></code></pre></div>
 <p>The main points to highlight here are:</p>
 <ul>
-<li>citar-org-roam-note-title-template specifies the org-capture templated used by org-roam reference notes. These are first created with the citar-open-notes function. Note the ${file} in the template: this will pick up the link to the zotero pdf in the reference</li>
-<li>the citar-file-trust-zotero thingy is needed to have citar ignore links in references that start with “zotero:”, otherwise citar will scramble them.</li>
-<li>finally, we modify citar-file-open-functions to make sure that .pdf files are dispatched to an external application.</li>
+<li>citar-org-roam-note-title-template specifies the org-capture template used by org-roam reference notes, which are first created with the citar-open-notes function. Note the <code>${file}</code> in the template: this will pick up the link to the zotero pdf and insert in in the org-roam note</li>
+<li>the citar-file-trust-zotero thingy is needed to have citar ignore links in references that start with “zotero:”. Otherwise, citar will scramble them.</li>
+<li>we also modify citar-file-open-functions to make sure that .pdf files are dispatched to an external application.</li>
 </ul>
 </section>
 <section id="opening-zotero-pdf-from-org-roam" class="level1">
 <h1>Opening Zotero pdf from org roam</h1>
-<p>With the above setup, we can then customize the Zotero bibliography export by making sure that the “file” field contains a “zotero:” link to the zotero pdf. Then the citar-org-roam-note-title-template thing above will add this path at the head of the reference note. Customizing Zotero’s export is a bit fiddly. The steps are:</p>
+<p>With the above setup, we can then customize the Zotero latex bibliography export by making sure that the “file” field contains a “zotero:” link to the zotero pdf (which will be opened in Zotero’s pdf annotator). Then the citar-org-roam-note-title-template thing above will add this path at the head of the reference note.</p>
+<p>Customizing Zotero’s export is a bit fiddly. The steps are:</p>
 <ol type="1">
 <li>Install the better bibtex Zotero plugin</li>
 <li>Customize the better bibtex export with a bit of javascript code that formats the link to the article pdf</li>
 <li>Export the references to the file monitored by citar (see above) and keep them exported with zotero’s keep updated option</li>
 </ol>
-<p>Step 2 is kind of painful because the customization code (<a href="https:retorque.re/zotero-better-bibtex/exporting/scripting/">see here</a>) needs to be inserted into the “postscript” field under preferences &gt; better bibtex &gt; export. This field is basically a box where you can put some javascript that is evaluated for the export of each entry. Then, one can do:</p>
+<p>Step 2 is kind of painful because the customization code (<a href="https:retorque.re/zotero-better-bibtex/exporting/scripting/">see here</a>) needs to be inserted into the “postscript” field, under <code>preferences &gt; better bibtex &gt; export</code>. This field is basically a box where you can put some javascript that is evaluated at export time for each entry. Then, one can do:</p>
 <div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb4-1"><span class="cf" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">if</span> (Translator<span class="op" style="color: #5E5E5E;
@@ -520,17 +521,17 @@ font-style: inherit;">"value"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">:</span> final_paths})</span>
 <span id="cb4-23">}</span></code></pre></div>
-<p>This bit of code basically takes the reference at export time, and it creates a zotero link to the pdf, which is stored in the <code>file</code> field of the export. Note the calls to <code>Zotero.debug</code>. This is the only way to debug the function: the output can be seen by enabling debugging in <code>help &gt; debug output logging</code>.</p>
+<p>This bit of code takes the reference at export time, and it creates a zotero link to the pdf, which is stored in the <code>file</code> field of the export. Note the calls to <code>Zotero.debug</code>. This is the only way to debug the function: the output can be seen by enabling debugging in <code>help &gt; debug output logging</code>.</p>
 <p>Once we have this, however, we are rewarded with the ability of creating reference notes in org-roam which have, right under the title, a link to the article’s pdf. See below an example using my PhD thesis.</p>
 <p><img src="https://wwww.riccardopinosio.com/blog/assets/reference_note-header.png" class="img-fluid"></p>
-<p>This pdf can be opened in org mode, which will let the browser handle the link, which will in turn open the pdf in Zotero.</p>
+<p>This link can be opened in org mode, which will then let the browser handle the link, which will then open the pdf in Zotero’s pdf annotator. We have then linked the org-roam zotero note with the corresponding pdf in Zotero via Zotero’s note export.</p>
 </section>
 <section id="zotero-note-export" class="level1">
 <h1>Zotero note export</h1>
-<p>Zotero 6 comes with a handy pdf annotator tool that is excellent to highlight pdf passages and take notes on them. It would be DANDY if we could find a way to import such notes to the corresponding reference note in org-roam.</p>
-<p>Fortunately, the notes are exported in the references.tex file in latex format inside a <code>note</code> field, and they also contain the page number of the annotation. This field can then be parsed and converted to org format. The basic idea is the following: every time an org file is opened or saved, we run a <code>update-zotero-notes</code> function that checks whether this buffer is a reference note. If it is, then it looks into the references.tex file for a <code>note</code> field and parses it. The results are then appended at the end of the buffer, under a <code>zotero notes</code> heading.</p>
+<p>It would be quite dandy if we could also find a way to import the notes saved in Zotero’s pdf annotator to the corresponding reference note in org-roam.</p>
+<p>Fortunately, the notes are exported in the references.tex file in latex format inside a <code>note</code> field, and they also contain the page number of the annotation. This field can then be parsed and converted from latex to org format, also adding a link to the pdf page in the note. The basic idea is the following: every time an org file is opened or saved, we run a <code>update-zotero-notes</code> function that checks whether this buffer is a reference note. If it is, then it looks into the <code>references.tex</code> file exported from Zotero for a <code>note</code> field for the reference and parses it. The results are then appended at the end of the buffer of the roam-note, under a <code>zotero notes</code> heading.</p>
 <p>The code that does this is a bit lengthy to paste here: you can find it in my config <a href="https://github.com/riccardopinosio/dotfiles/blob/master/dot_doom.d/org-roam-zotero-notes.el">here</a>.</p>
-<p>The important bit in it is to add the parsing function to the <code>find-file-hook</code> and <code>after-save-hook</code> hooks so that they are ran on file open and save:</p>
+<p>The important bit is to add the update-zotero-notes function to the <code>find-file-hook</code> and <code>after-save-hook</code> hooks so that they are ran on file open and save:</p>
 <div class="sourceCode" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode commonlisp code-with-copy"><code class="sourceCode commonlisp"><span id="cb5-1">(add-hook <span class="dt" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">'find-file-hook</span> <span class="op" style="color: #5E5E5E;
@@ -541,11 +542,10 @@ background-color: null;
 font-style: inherit;">'after-save-hook</span> <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#'</span>riccardo/update-zotero-notes)</span></code></pre></div>
-<p>And here is how it looks:</p>
+<p>And here is how it looks when setup:</p>
 <p><img src="https://wwww.riccardopinosio.com/blog/assets/2023-03-27 20.40.21.gif" class="img-fluid"></p>
-<p>Pretty neat uh? Now we have our Zotero notes automagically imported into the corresponding org-roam reference.</p>
-<p>Of course, with this method it’s only possible to import notes from Zotero. It is not possible to attach org notes to a zotero pdf, or link from a Zotero note to an org-roam note.</p>
-<p>A further line of investigation here would then be to develop an approach allowing for a deeper note-taking integration between org-roam and zotero. It would be rather handy if one could e.g.&nbsp;link to other org-roam notes from zotero pdf notes. This however would most likely require the writing of a zotero extension.</p>
+<p>Now we have our notes in the Zotero pdf annotator automagically imported into the corresponding org-roam reference.</p>
+<p>Of course, with this method it’s only possible to import notes from Zotero into org-roam. It is not possible to e.g.&nbsp;link from a Zotero note to an org-roam note. It would be interesting to investigate whether a tighter integration between Zotero and org-roam is possible, but this would seem to require writing a Zotero extension.</p>
 
 
 </section>
@@ -554,7 +554,7 @@ font-style: inherit;">#'</span>riccardo/update-zotero-notes)</span></code></pre>
   <category>emacs</category>
   <category>zotero</category>
   <guid>https://wwww.riccardopinosio.com/blog/posts/zotero_notes_article.html</guid>
-  <pubDate>Mon, 13 Mar 2023 23:00:00 GMT</pubDate>
+  <pubDate>Thu, 20 Apr 2023 22:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>

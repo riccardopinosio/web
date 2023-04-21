@@ -39,19 +39,17 @@ format:
 
 :::::: {}
 
-Welcome! I'm Riccardo Pinosio, AI/ML scientist & engineer.
-
-I'm director of R&D at [Knights Analytics](https://www.knightsanalytics.com). Before that I was a technologist at [Avanade](https://en.wikipedia.org/wiki/Avanade) and data scientist at [Funda](https://www.funda.nl/). I'm also a scientific advisor for [digi.bio](https://digi.bio) on the application of machine learning to biological imaging experiments.
+Welcome! I'm Riccardo Pinosio. I'm director of R&D at [Knights Analytics](https://www.knightsanalytics.com). Before that I was a technologist at [Avanade](https://en.wikipedia.org/wiki/Avanade) and data scientist at [Funda](https://www.funda.nl/). I'm also on the scientific advisory board of [digi.bio](https://digi.bio).
 
 I hold a PhD in logic from the [ILLC](https://www.illc.uva.nl) and lecture in machine learning at the [Amsterdam University of Applied Sciences](https://www.amsterdamuas.com/) and [CMI](https://www.cmihva.nl/en/).
 
-I prefer to work at the intersection of R&D and engineering because that's where product innovation happens. My current focus is on NLP (information extraction, entity resolution), AI assisted data engineering, large-scale knowledge graphs & representation learning, and (neuro)-symbolic AI, with applications primarily in banking (e.g. fraud detection), finance, healthcare & pharma.
+I prefer to work at the intersection of R&D, business, and engineering because that's where product innovation happens. My current focus is on NLP (information extraction, entity resolution), large-scale knowledge graphs & representation learning, and (neuro)-symbolic AI, with applications primarily to AI assisted data engineering and AI analytics automation in banking, finance, healthcare, and life sciences.
 
 ::::::
 
 :::
 
-Other than that I love open source, [emacs](https://www.gnu.org/software/emacs/), and weird programming languages.
+Other than that I love open source, [emacs](https://www.gnu.org/software/emacs/), and weird programming languages that provide new perspectives on computation.
 
 ## [![](icons/cell_phone.svg){width="6%"}]() Contacts
 
