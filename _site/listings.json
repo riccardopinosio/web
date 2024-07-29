@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/blog/posts/hugo_podcast.html",
       "/blog/posts/zotero_notes_article.html"
     ]
   }

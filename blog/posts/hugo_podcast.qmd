@@ -1,0 +1,11 @@
+---
+title: "Hugot: easy onnx pipelines in Golang"
+author: Riccardo Pinosio
+date: 2024-07-29
+description: "Go, meet huggingface, interview with Riccardo Pinosio"
+categories: [golang, transformers]
+---
+
+I have recently had the priviledge to be able to speak about [hugot](https://github.com/knights-analytics/hugot) on the "Cup o' Go" podcast, together with [Jonathan Hall](https://www.linkedin.com/in/jhallio/) and [Shay Nehmad](https://www.linkedin.com/in/shay-nehmad-18183ab4/). You can find the full episode [here](https://cupogo.dev/episodes/go-meet-hugging-face-interview-with-riccardo-pinosio) and on youtube:
+
+{{< video https://youtu.be/vt7KwCETPQ4?si=0vj9DuAOi7ucOOtv >}}

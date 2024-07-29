@@ -1,6 +1,6 @@
 ---
 sidebar: false
-description: "Riccardo Pinosio's personal website on AI, machine learning, emacs, and more!"
+title: Riccardo Pinosio
 image: quarto.png
 toc: true
 listing:
@@ -39,17 +39,19 @@ format:
 
 :::::: {}
 
-Welcome! I'm Riccardo Pinosio. I'm director of R&D at [Knights Analytics](https://www.knightsanalytics.com). Before that I was a technologist at [Avanade](https://en.wikipedia.org/wiki/Avanade) and data scientist at [Funda](https://www.funda.nl/). I'm also on the scientific advisory board of [digi.bio](https://digi.bio).
+I am director of R&D at [Knights Analytics](https://www.knightsanalytics.com). Before that I was a technologist at [Avanade](https://en.wikipedia.org/wiki/Avanade) and data scientist at [Funda](https://www.funda.nl/). I'm also on the scientific advisory board of [digi.bio](https://digi.bio).
 
 I hold a PhD in logic from the [ILLC](https://www.illc.uva.nl) and lecture in machine learning at the [Amsterdam University of Applied Sciences](https://www.amsterdamuas.com/) and [CMI](https://www.cmihva.nl/en/).
 
-I prefer to work at the intersection of R&D, business, and engineering because that's where product innovation happens. My current focus is on NLP (information extraction, entity resolution), large-scale knowledge graphs & representation learning, and (neuro)-symbolic AI, with applications primarily to AI assisted data engineering and AI analytics automation in banking, finance, healthcare, and life sciences.
+I work at the intersection of research, business, and engineering because that's where product innovation happens. My current focus is on building large-scale distributed knowledge graphs (information extraction, entity resolution) and on graph machine learning, with applications primarily to AI assisted data management in banking, finance, healthcare, and life sciences.
 
 ::::::
 
 :::
 
-Other than that I love open source, [emacs](https://www.gnu.org/software/emacs/), and weird programming languages that provide new perspectives on computation.
+I also love open source, [emacs](https://www.gnu.org/software/emacs/), and weird programming languages that provide new perspectives on computation. I am a contributor to [hugot](https://github.com/knights-analytics/hugot) and [onnxruntime_go](https://github.com/yalue/onnxruntime_go), which aim to expand the machine learning ecosystem in golang.
+
+My biggest hobby is literature, and my father is an [italian teacher, painter and writer](https://www.corradopinosio.com).
 
 ## [![](icons/cell_phone.svg){width="6%"}]() Contacts
 

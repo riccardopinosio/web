@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://wwww.riccardopinosio.com/index.html</loc>
-    <lastmod>2023-05-01T16:40:21.562Z</lastmod>
+    <loc>https://wwww.riccardopinosio.com/blog/posts/zotero_notes_article.html</loc>
+    <lastmod>2023-04-21T15:24:06.815Z</lastmod>
   </url>
   <url>
-    <loc>https://wwww.riccardopinosio.com/blog/posts/zotero_notes_article.html</loc>
-    <lastmod>2023-05-01T16:40:21.952Z</lastmod>
+    <loc>https://wwww.riccardopinosio.com/index.html</loc>
+    <lastmod>2024-07-29T16:17:39.800Z</lastmod>
+  </url>
+  <url>
+    <loc>https://wwww.riccardopinosio.com/blog/posts/hugo_podcast.html</loc>
+    <lastmod>2024-07-29T16:25:26.830Z</lastmod>
   </url>
 </urlset>

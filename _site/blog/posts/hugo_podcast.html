@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Riccardo Pinosio">
+<meta name="dcterms.date" content="2024-07-29">
+<meta name="description" content="Go, meet huggingface, interview with Riccardo Pinosio">
 
-<title>Riccardo Pinosio – Riccardo Pinosio: personal website</title>
+<title>Hugot: easy onnx pipelines in Golang – Riccardo Pinosio: personal website</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,27 +26,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./favicon.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,70 +72,12 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-blog-listings .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-blog-listings'] = new List('listing-blog-listings', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
-<link rel="alternate" type="application/rss+xml" title="Riccardo Pinosio: personal website" href="index.xml" data-external="1"><meta property="og:title" content="Riccardo Pinosio – Riccardo Pinosio: personal website">
-<meta property="og:description" content="AI to the stars">
-<meta property="og:image" content="https://wwww.riccardopinosio.com/quarto.png">
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Hugot: easy onnx pipelines in Golang – Riccardo Pinosio: personal website">
+<meta property="og:description" content="Go, meet huggingface, interview with Riccardo Pinosio">
+<meta property="og:image" content="https://wwww.riccardopinosio.com/blog/posts/quarto.png">
 <meta property="og:site_name" content="Riccardo Pinosio: personal website">
 </head>
 
@@ -146,7 +89,7 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
           <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
@@ -161,30 +104,43 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#contacts" id="toc-contacts" class="nav-link active" data-scroll-target="#contacts"><img src="icons/cell_phone.svg" class="img-fluid" style="width:6.0%"> Contacts</a></li>
-  <li><a href="#blog" id="toc-blog" class="nav-link" data-scroll-target="#blog"><img src="icons/news.svg" class="img-fluid" style="width:6.0%"> Blog</a></li>
-  <li><a href="#colophon" id="toc-colophon" class="nav-link" data-scroll-target="#colophon"><img src="icons/copyleft.svg" class="img-fluid" style="width:6.0%"> Colophon</a></li>
-  </ul>
-</nav>
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="emacs">emacs <span class="quarto-category-count">(1)</span></div><div class="category" data-category="golang">golang <span class="quarto-category-count">(1)</span></div><div class="category" data-category="transformers">transformers <span class="quarto-category-count">(1)</span></div><div class="category" data-category="zotero">zotero <span class="quarto-category-count">(1)</span></div></div></div>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Riccardo Pinosio</h1>
-</div>
+<h1 class="title">Hugot: easy onnx pipelines in Golang</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">golang</div>
+    <div class="quarto-category">transformers</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    Go, meet huggingface, interview with Riccardo Pinosio
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Riccardo Pinosio </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 29, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -194,85 +150,10 @@ window.Quarto = {
 </header>
 
 
-<div>
-
-</div>
-<div class="profile-header quarto-layout-panel" data-layout="[25,60]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 29.4%;justify-content: center;">
-<p><img src="headshot.jpeg" class="profile-pic img-fluid"></p>
-<div class="centerdiv">
-<p><a href="https://www.linkedin.com/in/riccardopinosio/"><img src="icons/linkedin.svg" class="img-fluid" style="width:15.0%"></a> <a href="https://www.github.com/riccardopinosio/"><img src="icons/github-mark-white.png" class="light-hide img-fluid" style="width:15.0%"></a> <a href="https://www.github.com/riccardopinosio/"><img src="icons/github-mark.png" class="dark-hide img-fluid" style="width:15.0%"></a> <a href="https://www.github.com/riccardopinosio/"><img src="icons/scholar.png" class="img-fluid" style="width:15.0%"></a></p>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 70.6%;justify-content: flex-start;">
-<p>I am director of R&amp;D at <a href="https://www.knightsanalytics.com">Knights Analytics</a>. Before that I was a technologist at <a href="https://en.wikipedia.org/wiki/Avanade">Avanade</a> and data scientist at <a href="https://www.funda.nl/">Funda</a>. I’m also on the scientific advisory board of <a href="https://digi.bio">digi.bio</a>.</p>
-<p>I hold a PhD in logic from the <a href="https://www.illc.uva.nl">ILLC</a> and lecture in machine learning at the <a href="https://www.amsterdamuas.com/">Amsterdam University of Applied Sciences</a> and <a href="https://www.cmihva.nl/en/">CMI</a>.</p>
-<p>I work at the intersection of research, business, and engineering because that’s where product innovation happens. My current focus is on building large-scale distributed knowledge graphs (information extraction, entity resolution) and on graph machine learning, with applications primarily to AI assisted data management in banking, finance, healthcare, and life sciences.</p>
-</div>
-</div>
-</div>
-<p>I also love open source, <a href="https://www.gnu.org/software/emacs/">emacs</a>, and weird programming languages that provide new perspectives on computation. I am a contributor to <a href="https://github.com/knights-analytics/hugot">hugot</a> and <a href="https://github.com/yalue/onnxruntime_go">onnxruntime_go</a>, which aim to expand the machine learning ecosystem in golang.</p>
-<p>My biggest hobby is literature, and my father is an <a href="https://www.corradopinosio.com">italian teacher, painter and writer</a>.</p>
-<section id="contacts" class="level2">
-<h2 class="anchored" data-anchor-id="contacts"><a href=""><img src="icons/cell_phone.svg" class="img-fluid" style="width:6.0%"></a> Contacts</h2>
-<p>The best way to get in contact with me is to email me at riccardo@knightsanalytics.com, or to shoot me a DM on <a href="https://www.linkedin.com/in/riccardopinosio">linkedin</a>.</p>
-<hr>
-</section>
-<section id="blog" class="level2">
-<h2 class="anchored" data-anchor-id="blog"><a href=""><img src="icons/news.svg" class="img-fluid" style="width:6.0%"></a> Blog</h2>
-<div id="listing-blog-listings" class="quarto-listing quarto-listing-container-table">
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-Date
-</th>
-<th>
-Title
-</th>
-<th>
-Categories
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-categories="golang,transformers" data-listing-date-sort="1722204000000" data-listing-file-modified-sort="1722270326830" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="39" data-listing-title-sort="Hugot: easy onnx pipelines in Golang" data-listing-filename-sort="hugo_podcast.qmd">
-<td>
-<span class="listing-date">July 29, 2024</span>
-</td>
-<td>
-<a href="./blog/posts/hugo_podcast.html" class="title listing-title">Hugot: easy onnx pipelines in Golang</a>
-</td>
-<td>
-<span class="listing-categories">golang, transformers</span>
-</td>
-</tr>
-<tr data-index="1" data-categories="emacs,zotero" data-listing-date-sort="1682028000000" data-listing-file-modified-sort="1682090646815" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1860" data-listing-title-sort="Scientific note-taking with org-roam, citar, and zotero" data-listing-filename-sort="zotero_notes_article.qmd">
-<td>
-<span class="listing-date">April 21, 2023</span>
-</td>
-<td>
-<a href="./blog/posts/zotero_notes_article.html" class="title listing-title">Scientific note-taking with org-roam, citar, and zotero</a>
-</td>
-<td>
-<span class="listing-categories">emacs, zotero</span>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
-</section>
-<section id="colophon" class="level2">
-<h2 class="anchored" data-anchor-id="colophon"><a href=""><img src="icons/copyleft.svg" class="img-fluid" style="width:6.0%"></a> Colophon</h2>
-<p>This website is generated with emacs <img src="icons/emacslogo.png" class="img-fluid" style="width:2.0%"> and org-mode, adapting a theme from <a href="https://hamel.dev/">Hamel Husain</a>.</p>
+<p>I have recently had the priviledge to be able to speak about <a href="https://github.com/knights-analytics/hugot">hugot</a> on the “Cup o’ Go” podcast, together with <a href="https://www.linkedin.com/in/jhallio/">Jonathan Hall</a> and <a href="https://www.linkedin.com/in/shay-nehmad-18183ab4/">Shay Nehmad</a>. You can find the full episode <a href="https://cupogo.dev/episodes/go-meet-hugging-face-interview-with-riccardo-pinosio">here</a> and on youtube:</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/vt7KwCETPQ4?si=0vj9DuAOi7ucOOtv" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 
 
-
-</section>
 
 </main> <!-- /main -->
 <script src="switch_image.js"></script>
