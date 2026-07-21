@@ -11,14 +11,14 @@
     "href": "index.html",
     "title": "Riccardo Pinosio",
     "section": "",
-    "text": "I also love open source, emacs, and weird programming languages that provide new perspectives on computation. I am a contributor to hugot and onnxruntime_go, which aim to expand the machine learning ecosystem in golang.\nMy biggest hobby is literature, and my father is an italian teacher, painter and writer."
+    "text": "I also love open source, emacs, and weird programming languages that provide new perspectives on computation. I am the author of hugot, an open source LLM inference runtime for Go, and of ortgenai, Go bindings to the onnxruntime-genai C API. I also contribute to onnxruntime_go, onnx-gomlx, and other projects working to expand the machine learning ecosystem in golang.\nMy biggest hobby is literature, and my father is an italian teacher, painter and writer."
   },
   {
     "objectID": "index.html#contacts",
     "href": "index.html#contacts",
     "title": "Riccardo Pinosio",
     "section": " Contacts",
-    "text": "Contacts\nThe best way to get in contact with me is to email me at riccardo@knightsanalytics.com, or to shoot me a DM on linkedin."
+    "text": "Contacts\nThe best way to get in contact with me is to email me at contact@riccardopinosio.com, or to shoot me a DM on linkedin."
   },
   {
     "objectID": "index.html#blog",
@@ -32,7 +32,7 @@
     "href": "index.html#colophon",
     "title": "Riccardo Pinosio",
     "section": " Colophon",
-    "text": "Colophon\nThis website is generated with emacs  and org-mode, adapting a theme from Hamel Husain."
+    "text": "Colophon\nThis website is written in emacs  and generated with Quarto, adapting a theme from Hamel Husain."
   },
   {
     "objectID": "blog/posts/hugo_podcast.html",

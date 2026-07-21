@@ -31,7 +31,7 @@ format:
 [![](icons/linkedin.svg){width="15%"}](https://www.linkedin.com/in/riccardopinosio/)
 [![](icons/github-mark-white.png){width="15%" .light-hide}](https://www.github.com/riccardopinosio/)
 [![](icons/github-mark.png){width="15%" .dark-hide}](https://www.github.com/riccardopinosio/)
-[![](icons/scholar.png){width="15%"}](https://www.github.com/riccardopinosio/)
+[![](icons/scholar.png){width="15%"}](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=riccardo+pinosio&btnG=)
 
 :::::::::
 
@@ -49,13 +49,13 @@ I work at the intersection of research, business, and engineering because that's
 
 :::
 
-I also love open source, [emacs](https://www.gnu.org/software/emacs/), and weird programming languages that provide new perspectives on computation. I am a contributor to [hugot](https://github.com/knights-analytics/hugot) and [onnxruntime_go](https://github.com/yalue/onnxruntime_go), which aim to expand the machine learning ecosystem in golang.
+I also love open source, [emacs](https://www.gnu.org/software/emacs/), and weird programming languages that provide new perspectives on computation. I am the author of [hugot](https://github.com/knights-analytics/hugot), an open source LLM inference runtime for Go, and of [ortgenai](https://github.com/knights-analytics/ortgenai), Go bindings to the onnxruntime-genai C API. I also contribute to [onnxruntime_go](https://github.com/yalue/onnxruntime_go), [onnx-gomlx](https://github.com/gomlx/onnx-gomlx), and other projects working to expand the machine learning ecosystem in golang.
 
 My biggest hobby is literature, and my father is an [italian teacher, painter and writer](https://www.corradopinosio.com).
 
 ## [![](icons/cell_phone.svg){width="6%"}]() Contacts
 
-The best way to get in contact with me is to email me at riccardo@knightsanalytics.com, or to shoot me a DM on [linkedin](https://www.linkedin.com/in/riccardopinosio).
+The best way to get in contact with me is to email me at contact@riccardopinosio.com, or to shoot me a DM on [linkedin](https://www.linkedin.com/in/riccardopinosio).
 
 ---
 
@@ -66,4 +66,4 @@ The best way to get in contact with me is to email me at riccardo@knightsanalyti
 
 ## [![](icons/copyleft.svg){width="6%"}]() Colophon
 
-This website is generated with emacs ![](icons/emacslogo.png){width=2%} and org-mode, adapting a theme from [Hamel Husain](https://hamel.dev/).
+This website is written in emacs ![](icons/emacslogo.png){width=2%} and generated with [Quarto](https://quarto.org/), adapting a theme from [Hamel Husain](https://hamel.dev/).

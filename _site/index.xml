@@ -6,20 +6,20 @@
       version="2.0">
 <channel>
 <title>Riccardo Pinosio: personal website</title>
-<link>https://wwww.riccardopinosio.com/</link>
-<atom:link href="https://wwww.riccardopinosio.com/index.xml" rel="self" type="application/rss+xml"/>
+<link>https://www.riccardopinosio.com/</link>
+<atom:link href="https://www.riccardopinosio.com/index.xml" rel="self" type="application/rss+xml"/>
 <description>AI to the stars</description>
 <image>
-<url>https://wwww.riccardopinosio.com/quarto.png</url>
+<url>https://www.riccardopinosio.com/quarto.png</url>
 <title>Riccardo Pinosio: personal website</title>
-<link>https://wwww.riccardopinosio.com/</link>
+<link>https://www.riccardopinosio.com/</link>
 </image>
 <generator>quarto-1.5.55</generator>
 <lastBuildDate>Sun, 28 Jul 2024 22:00:00 GMT</lastBuildDate>
 <item>
   <title>Hugot: easy onnx pipelines in Golang</title>
   <dc:creator>Riccardo Pinosio</dc:creator>
-  <link>https://wwww.riccardopinosio.com/blog/posts/hugo_podcast.html</link>
+  <link>https://www.riccardopinosio.com/blog/posts/hugo_podcast.html</link>
   <description><![CDATA[ 
 
 
@@ -33,13 +33,13 @@
  ]]></description>
   <category>golang</category>
   <category>transformers</category>
-  <guid>https://wwww.riccardopinosio.com/blog/posts/hugo_podcast.html</guid>
+  <guid>https://www.riccardopinosio.com/blog/posts/hugo_podcast.html</guid>
   <pubDate>Sun, 28 Jul 2024 22:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Scientific note-taking with org-roam, citar, and zotero</title>
   <dc:creator>Riccardo Pinosio</dc:creator>
-  <link>https://wwww.riccardopinosio.com/blog/posts/zotero_notes_article.html</link>
+  <link>https://www.riccardopinosio.com/blog/posts/zotero_notes_article.html</link>
   <description><![CDATA[ 
 
 
@@ -232,7 +232,7 @@ font-style: inherit;">t</span>)))</span>
 <p>I also use <strong>org-roam-dailies</strong> to take daily notes, and <strong>org-ql</strong> together with <strong>org-agenda</strong> to scour my org-roam files for TODOs, disseminated here and there, and collate them into a nice overview.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://wwww.riccardopinosio.com/blog/assets/todo-overview.png" class="img-fluid figure-img"></p>
+<p><img src="https://www.riccardopinosio.com/blog/assets/todo-overview.png" class="img-fluid figure-img"></p>
 <figcaption>I need to remember to pay my taxes!</figcaption>
 </figure>
 </div>
@@ -575,7 +575,7 @@ font-style: inherit;">:</span> final_paths})</span>
 <span id="cb4-23">}</span></code></pre></div>
 <p>This bit of code takes the reference at export time, and it creates a zotero link to the pdf, which is stored in the <code>file</code> field of the export. Note the calls to <code>Zotero.debug</code>. This is the only way to debug the function: the output can be seen by enabling debugging in <code>help &gt; debug output logging</code>.</p>
 <p>Once we have this, however, we are rewarded with the ability of creating reference notes in org-roam which have, right under the title, a link to the article’s pdf. See below an example using my PhD thesis.</p>
-<p><img src="https://wwww.riccardopinosio.com/blog/assets/reference_note-header.png" class="img-fluid"></p>
+<p><img src="https://www.riccardopinosio.com/blog/assets/reference_note-header.png" class="img-fluid"></p>
 <p>This link can be opened in org mode, which will then let the browser handle the link, which will then open the pdf in Zotero’s pdf annotator. We have then linked the org-roam zotero note with the corresponding pdf in Zotero via Zotero’s note export.</p>
 </section>
 <section id="zotero-note-export" class="level1">
@@ -595,7 +595,7 @@ font-style: inherit;">'after-save-hook</span> <span class="op" style="color: #5E
 background-color: null;
 font-style: inherit;">#'</span>riccardo/update-zotero-notes)</span></code></pre></div>
 <p>And here is how it looks when setup:</p>
-<p><img src="https://wwww.riccardopinosio.com/blog/assets/2023-03-27 20.40.21.gif" class="img-fluid"></p>
+<p><img src="https://www.riccardopinosio.com/blog/assets/2023-03-27 20.40.21.gif" class="img-fluid"></p>
 <p>Now we have our notes in the Zotero pdf annotator automagically imported into the corresponding org-roam reference.</p>
 <p>Of course, with this method it’s only possible to import notes from Zotero into org-roam. It is not possible to e.g.&nbsp;link from a Zotero note to an org-roam note. It would be interesting to investigate whether a tighter integration between Zotero and org-roam is possible, but this would seem to require writing a Zotero extension.</p>
 
@@ -605,7 +605,7 @@ font-style: inherit;">#'</span>riccardo/update-zotero-notes)</span></code></pre>
  ]]></description>
   <category>emacs</category>
   <category>zotero</category>
-  <guid>https://wwww.riccardopinosio.com/blog/posts/zotero_notes_article.html</guid>
+  <guid>https://www.riccardopinosio.com/blog/posts/zotero_notes_article.html</guid>
   <pubDate>Thu, 20 Apr 2023 22:00:00 GMT</pubDate>
 </item>
 </channel>

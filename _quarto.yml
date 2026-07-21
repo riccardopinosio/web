@@ -15,7 +15,7 @@ website:
         href: https://github.com/riccardopinosio
   favicon: favicon.png
   open-graph: true
-  site-url: "https://wwww.riccardopinosio.com"
+  site-url: "https://www.riccardopinosio.com"
   description: "AI to the stars"
   navbar:
     title: false
